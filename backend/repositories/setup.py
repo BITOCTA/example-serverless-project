@@ -1,6 +1,5 @@
 import setuptools
 
-
 setuptools.setup(
     name="test_repositories",
     version="0.1.0",

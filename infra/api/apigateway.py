@@ -1,7 +1,7 @@
 import json
-import yaml
-import pulumi_aws as aws
 
+import pulumi_aws as aws
+import yaml
 
 swagger_dict = yaml.safe_load(open("./api/openapi.yml").read())
 

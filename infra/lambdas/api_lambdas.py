@@ -1,8 +1,8 @@
 import json
 import os
+
 import pulumi
 import pulumi_aws as aws
-
 from db.dynamo import USERS_TABLE_NAME
 
 API_LAMBDAS_PATH = "../backend/api"
@@ -43,7 +43,9 @@ for lambda_dir in os.listdir(API_LAMBDAS_PATH):
                     {
                         "Effect": "Allow",
                         "Action": ["logs:CreateLogStream", "logs:PutLogEvents"],
-                        "Resource": [f"arn:aws:logs:{REGION}:{ACCOUNT}:log-group:/aws/lambda/*:*"],
+                        "Resource": [
+                            f"arn:aws:logs:{REGION}:{ACCOUNT}:log-group:/aws/lambda/*:*"
+                        ],
                     },
                     {
                         "Action": [
