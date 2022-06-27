@@ -1,5 +1,16 @@
 # example-serverless-project
 
+## Build
+
+Go to backend/ folder and build using tasks.sh script.
+
+```bash
+cd backend
+./tasks.sh build
+```
+
+If build is successful, you should have lib/ folder in every lambda folder in backend/api.
+
 ## Deploy
 
 ### Prerequisites
