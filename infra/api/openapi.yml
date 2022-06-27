@@ -1,0 +1,101 @@
+openapi: 3.0.2
+x-stoplight:
+  id: 9kncixqb4sm2w
+info:
+  title: test
+  version: '1.0'
+paths:
+  '/users/{user_id}':
+    parameters:
+      - schema:
+          type: string
+        name: user_id
+        in: path
+        required: true
+    get:
+      summary: Get User Info by User ID
+      tags: []
+      operationId: get-users-userId
+      description: Retrieve the information of the user with the matching user ID.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      summary: ''
+      operationId: delete-users-user_id
+      responses:
+        '200':
+          description: OK
+  '/users':
+    post:
+      summary: Create New User
+      operationId: post-user
+      description: Create a new user.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUser'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-users
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        date_of_birth:
+          type: string
+        email:
+          type: string
+      required:
+        - id
+        - first_name
+        - last_name
+        - date_of_birth
+    CreateUser:
+      title: CreateUser
+      x-stoplight:
+        id: jqz6b5148zwlp
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        date_of_birth:
+          type: string
+        email:
+          type: string
