@@ -1,5 +1,13 @@
 # example-serverless-project
 
+## Overview
+
+Sample serverless (using only serverless AWS services) project with simple users CRUD inside. Code is written in pure Python, while all of the insfrastructure is defined using Pulumi IaC tool.
+
+Project architecture is described on the diagram below:
+
+![project architecture](https://user-images.githubusercontent.com/33602278/175916423-ef079f09-ec8e-4006-94f8-c7196ba08251.png)
+
 ## Build
 
 Go to backend/ folder and build using tasks.sh script.
