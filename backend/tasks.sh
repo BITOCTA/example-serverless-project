@@ -13,14 +13,6 @@ build() {
     done
 }
 
-serve() {
-    echo "I'm now serving"
-}
-
-deploy() {
-    echo "I'm now deploying"
-}
-
 case $1 in
     "build")        build;;
 esac
